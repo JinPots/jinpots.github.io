@@ -43,7 +43,7 @@
   <div id="main">
     <div class="grid xl:grid-cols-3 gap-10 aibietj">
       <div class="flex justify-center text-gray-900 font-medium dark:text-gray-100 h-screen">
-        <span id="name" class="text-7xl absolute ">
+        <span id="name" class="text-7xl absolute select-none">
         JinPots          
         </span>
 
@@ -55,7 +55,7 @@
           {/each}
         </span>
 
-        <span class="text-center absolute xl:invisible top-1/2 m-4">
+        <span class="text-center absolute xl:invisible top-1/2 m-4 dark:text-teal-100 text-emerald-900">
           Hi there!
           My name is Thien, but you can call me Jin or JinPots
           I'm a young developer from Vietnam, currently studying on secondary school
@@ -110,7 +110,11 @@
   }
   }
 
-  @media (prefers-color-scheme: dark) {
+  #icon>a>img {
+    transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  @media (prefers-color-scheme: dark) { 
     #icon > a > img {
       filter: invert(42%) sepia(94%) saturate(1274%) hue-rotate(161deg) brightness(95%) contrast(101%);
     }
@@ -118,5 +122,7 @@
 
   #icon > a >img:hover {
     filter: invert(11%) sepia(87%) saturate(7410%) hue-rotate(3deg) brightness(111%) contrast(101%);
+    transform: scale(1.15);
+
   }
 </style>
