@@ -26,7 +26,7 @@
 
 </script>
 
-<main class="overflow-hidden"></main>
+<main class="overflow-hidden">
 
   <div id="main">
     <div class="grid xl:grid-cols-3 gap-10 aibietj">
