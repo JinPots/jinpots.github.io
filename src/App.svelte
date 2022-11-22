@@ -6,6 +6,8 @@
   import youtube from './assets/youtube.svg';
   import mafuyu from './assets/mafuyu.png';
 
+  import Work from './assets/work.svelte';
+
   const socialLink = [
     {
       link: "https://github.com/JinPots", icon: github
@@ -26,9 +28,23 @@
 
 </script>
 
-<main class="overflow-hidden">
+<main>
 
   <div id="main">
+
+    <div id="nav" class="fixed z-50 w-28 min-w-24 h-12 rounded-xl items-center justify-center flex flex-row shadow-xl bg-teal-400 dark:bg-teal-700 m-9">
+      <a href="/#" class="m-2 cursor-default">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-house w-8" viewBox="0 0 16 16"> 
+        <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/> <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/> 
+        </svg> 
+      </a>
+      <a href="/#work" class="m-2 cursor-default">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-house w-8" viewBox="0 0 16 16">
+        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/> 
+      </svg>
+      </a>
+    </div>
+
     <div class="grid xl:grid-cols-3 gap-10 aibietj">
       <div class="flex justify-center text-gray-900 font-medium dark:text-gray-100 h-screen">
         <span id="name" class="text-7xl absolute select-none">
@@ -66,6 +82,8 @@
       </div>  
     </div>
   </div>
+
+  <Work/>
 </main>
 
 <style>
@@ -75,10 +93,6 @@
 
   #mafuyu >img {
     mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1));
-  }
-
-  #nav {
-    visibility: hidden;
   }
 
   #name {
