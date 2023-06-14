@@ -1,130 +1,150 @@
 <script>
-  import github from './assets/github.svg';
-  import fb from './assets/facebook.svg';
-  import twitch from './assets/twitch.svg';
-  import discord from './assets/discord.svg';
-  import youtube from './assets/youtube.svg';
-  import mafuyu from './assets/mafuyu.png';
+  import mafuyu from "./assets/mafuyu.png";
+  import Work from "./assets/work.svelte";
 
-  import Work from './assets/work.svelte';
 
-  const socialLink = [
-    {
-      link: "https://github.com/JinPots", icon: github
-    },
-    {
-      link: "https://fb.me/jinpots.official/", icon: fb
-    },
-    {
-      link: "https://twitch.tv/jinpots_osu", icon: twitch
-    },
-    {
-      link: "https://discord.gg/YYNxq3ybb", icon: discord
-    },
-    {
-      link: "https://www.youtube.com/channel/UCkgw8m5QXHydT9rHgTCjcMg", icon: youtube
-    }
-  ]
+  // css
+  import "./fira_code.css";
+
+  let bar,
+    bar_inside,
+    bar_inside_width = 100;
+  
+  setTimeout(() => {
+    bar.style.width = "60%";
+    setTimeout(() => {
+      bar_inside.style.width = bar_inside_width + "%";
+      setTimeout(() => {
+        bar.style.opacity = 0;
+        setTimeout(() => {
+          bar.style.display = "none";
+          // @ts-ignore
+          document.querySelector("mainContainer").style.opacity = 1;
+        }, 1300);
+      },1000)
+    }, 1300);
+  }, 1000);
 
 </script>
 
 <main>
-
-  <div id="main">
-
-    <div id="nav" class="fixed z-50 w-28 min-w-24 h-12 rounded-xl items-center justify-center flex flex-row shadow-xl bg-teal-400 dark:bg-teal-700 m-9">
-      <a href="/#" class="m-2 cursor-default">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-house w-8" viewBox="0 0 16 16"> 
-        <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/> <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/> 
-        </svg> 
-      </a>
-      <a href="/#work" class="m-2 cursor-default">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-house w-8" viewBox="0 0 16 16">
-        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/> 
-      </svg>
-      </a>
-    </div>
-
-    <div class="grid xl:grid-cols-3 gap-10 aibietj">
-      <div class="flex justify-center text-gray-900 font-medium dark:text-gray-100 h-screen">
-        <span id="name" class="text-7xl absolute select-none">
-        JinPots          
-        </span>
-
-        <span id="icon" class="absolute shadow-2xl p-2 rounded-lg flex flex-row">
-         {#each socialLink as s}
-            <a href="{s.link}">
-              <img src={s.icon} alt="" class="w-10 h-10 m-4">
-            </a>
-          {/each}
-        </span>
-
-        <span class="text-center absolute xl:invisible top-1/2 m-4 dark:text-teal-100 text-emerald-900">
-          Hi there!
-          My name is Thien, but you can call me Jin or JinPots
-          I'm a young developer from Vietnam, currently studying on secondary school
-          and I play lots of rhythm games like osu!, Project Sekai, and more<br><br>
-          I'm currently learning web development, and I'm looking for a job.
-          If you're interested in me, feel free to contact me on social media.
-        </span>
-      </div>
-      <div class="text-center justify-center invisible xl:visible flex flex-col dark:text-teal-100 text-emerald-900">
-        <span>Hi there! <br>
-          My name is Thien, but you can call me Jin or JinPots <br>
-          I'm a young developer from Vietnam, currently studying on secondary school
-          and I play lots of rhythm games like osu!, Project Sekai, and more<br><br>
-          I'm currently learning web development, and I'm looking for a job.
-          If you're interested in me, feel free to contact me on social media.<br>
-        </span>
-      </div>
-      <div id="mafuyu" class=" invisible xl:visible">
-        <img src={mafuyu} alt="My wife!" class="max-h-screen absolute" id="mafuyu" style="right: 0;">
-      </div>  
-    </div>
+  <div bind:this={bar} id="bar">
+    <div bind:this={bar_inside} id="bar_inside" />
   </div>
+  <mainContainer>
+    <div id="info" class="justify-center">
+      <h1 id="name">
+        <a
+          href="https://www.facebook.com/jinpots.official/"
+          style="font-size: 6rem"
+          class="fancy-font name">JinPots</a
+        >
+      </h1>
+    </div>
+    <div id="alltheinfos" class="grid grid-rows-2 xl:grid-cols-3">
+      <div id="para" class="">
+        <p>
+          Hello, welcome to my portfolio web! This is a meaningless web, I just
+          want to make a web with Svelte. <br />
+          I'm a 15 years old student from Vietnam, I'm currently learning web development
+          and I'm also a osu! player. <br />
+        </p>
+      </div>
 
-  <Work/>
+      <div id="work" class="text-center justify-center xl:absolute">
+        <h1 class="text-3xl">My works:</h1>
+        <Work />
+      </div>
+
+      <div id="mafuyu" class=" invisible xl:visible">
+        <img
+          src={mafuyu}
+          alt="My wife!"
+          class="max-h-screen absolute"
+          id="mafuyu"
+          style="right: 0;"
+        />
+      </div>
+    </div>
+  </mainContainer>
 </main>
 
 <style>
   main {
-    font-family: 'Fira Code', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  #mafuyu >img {
-    mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1));
+  #mafuyu > img {
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
   }
 
-  #name {
-    top: 25%;
+  #bar {
+    color: white;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    width: 0.25%;
+    height: 4%;
+    top: 46%;
+    border: 1px solid white;
+  }
+  .name {
+    text-decoration: none;
+  }
+  mainContainer {
+    opacity: 0;
+    color: white;
+    transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   }
 
-  #icon {
-    top: 35%;
+  #para {
+    text-align: center;
   }
-  
+
+  #mafuyu {
+    display: none;
+  }
   @media (min-width: 1280px) {
-  #name {
-    top: 40%;
-  }
-  #icon {
-    top: 50%;
-  }
-  }
-
-  #icon>a>img {
-    transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-
-  @media (prefers-color-scheme: dark) { 
-    #icon > a > img {
-      filter: invert(42%) sepia(94%) saturate(1274%) hue-rotate(161deg) brightness(95%) contrast(101%);
+    #para {
+      grid-column: 2 / 3;
+    }
+    #mafuyu {
+      display: block;
     }
   }
+  #info {
+    display: flex;
+  }
+  #work {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: block;
+  }
+  .name {
+    color: #009dff;
+  }
 
-  #icon > a >img:hover {
-    filter: invert(11%) sepia(87%) saturate(7410%) hue-rotate(3deg) brightness(111%) contrast(101%);
-    transform: scale(1.15);
+  :root {
+    font-family: "Fira Code", sans-serif;
+    background-color: #2c394b;
+  }
 
+  .fancy-font {
+    font-family: "Signature", sans-serif;
+  }
+
+  #bar_inside {
+    background-color: white;
+    width: 0%;
+    height: 100%;
+    transition: width 1s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  #bar {
+    transition: all 1.2s cubic-bezier(0.77, 0, 0.175, 1);
   }
 </style>

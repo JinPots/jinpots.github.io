@@ -46,3 +46,13 @@
   font-weight: 300 700;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Signature';
+  src: url('woff2/SpectacularSignature.woff2') format('woff2'),
+      url('woff/SpectacularSignature.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+

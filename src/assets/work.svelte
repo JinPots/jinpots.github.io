@@ -23,10 +23,10 @@
     ]
 </script>
 
-<work id="work" class="bg-gray-800 dark:bg-teal-600 h-screen w-screen absolute">
-    <div id="container" class="grid grid-cols-2 grid-rows-5" style="padding-top: 5%">
+<work id="work">
+    <div id="container" style="padding-top: 5%; padding-left: 3%" >
         {#each works as thing}
-            <span class='m-2 rounded bg-emerald-900 text-teal-300 p-2 text-center justify-center'> <h2 class="text-teal-500"><a href={thing.link}>{thing.name}</a></h2> <h5>{thing.desc}</h5> </span>
+            <span class='m-2 roundedtext-center justify-center'> <h2 class="text-teal-500"><a href={thing.link}>{thing.name}</a></h2> <h5>{thing.desc}</h5> </span>
         {/each}
     </div>
 </work>
