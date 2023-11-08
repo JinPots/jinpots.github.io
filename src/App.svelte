@@ -187,7 +187,7 @@
           >You can check me out at: <div id="medias">
             <a href="https://fb.me/jinpots.official">Facebook</a>
             <a href="https://twitter.com/shot27_osu">Twitter (X)</a>
-            <a href="mailto:huuthien27012@gmail.com">Email</a>
+            <a href="mailto:jinpots@suithoughts.top">Email</a>
             <a href="https://www.instagram.com/jinpots_osu/">Instagram</a>
           </div></span
         >
