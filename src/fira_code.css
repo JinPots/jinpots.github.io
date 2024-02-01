@@ -1,40 +1,19 @@
 @font-face {
-  font-family: 'Signature';
-  src: url('/woff2/SpectacularSignature.woff2') format('woff2'),
-      url('/woff/SpectacularSignature.woff') format('woff');
+  font-family: "Signature";
+  src: url("/otf/Mattrinah.otf");
   font-weight: normal;
-  font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: 'MeladuRose';
-  src: url('/woff2/MELADUROSE.woff2') format('woff2'),
-      url('/woff/MELADUROSE.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Skeina';
-  src: url('/woff2/Skeina-Regular.woff2') format('woff2'),
-      url('/woff/Skeina-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Ramisland';
-  src: url('/otf/Ramisland.otf');
+  font-family: "Ramisland";
+  src: url("/otf/Ramisland.otf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Qeilab';
-  src: url('/otf/Qeilab.otf');
+  font-family: "Qeilab";
+  src: url("/otf/Qeilab.otf");
   font-weight: normal;
   font-style: normal;
 }

@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-heading {
+  @apply bg-clip-text text-transparent box-decoration-clone;
+  /* Direction */
+  @apply bg-gradient-to-br;
+  /* Color Stops */
+  @apply from-primary-500 via-tertiary-500 to-secondary-500;
+}
+
+:root [data-theme="jinpot"] {
+  --theme-font-family-base: "Qeilab", sans-serif;
+  --theme-font-family-heading: "Signature";
+  /* ... */
+}

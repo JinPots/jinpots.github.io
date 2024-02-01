@@ -1,197 +1,87 @@
 <script>
-  // @ts-nocheck
-
-  // css
-  import "./fira_code.css";
-
-  let bar,
-    bar_inside,
-    bar_inside_width = 100;
-
-  setTimeout(() => {
-    bar.style.width = "60%";
-    setTimeout(() => {
-      bar_inside.style.width = bar_inside_width + "%";
-      setTimeout(() => {
-        bar.style.opacity = 0;
-        // @ts-ignore
-        document.querySelector("mainContainer").style.display = "grid";
-        setTimeout(() => {
-          bar.style.display = "none";
-          // @ts-ignore
-          document.querySelector("mainContainer").style.opacity = 1;
-        }, 1300);
-      }, 1000);
-    }, 1300);
-  }, 1000);
-
-  let aboutH,
-    worksH,
-    socialH,
-    about = false,
-    about1 = false,
-    works = false,
-    works1 = false,
-    social = false,
-    social1 = false;
-
-  setTimeout(() => {
-    aboutH = document.getElementById("aboutH");
-    aboutH.addEventListener("click", () => {
-      if (!about) {
-        works = false;
-        social = false;
-        about = true;
-      } else {
-        about = false;
-      }
-    });
-    worksH = document.getElementById("worksH");
-    worksH.addEventListener("click", () => {
-      if (!works) {
-        about = false;
-        social = false;
-        works = true;
-      } else {
-        works = false;
-      }
-    });
-    socialH = document.getElementById("socialH");
-
-    socialH.addEventListener("click", () => {
-      if (!social) {
-        about = false;
-        works = false;
-        social = true;
-      } else {
-        social = false;
-      }
-    });
-    const aboutMe = document.getElementById("aboutMe");
-    const myWorks = document.getElementById("myWorks");
-    const socialDiv = document.getElementById("social");
-    const c = setInterval(() => {
-      if (!about && !about1) {
-        aboutMe.style.opacity = 0;
-        about1 = true;
-        setTimeout(() => {
-          aboutMe.style.display = "none";
-        }, 301);
-      }
-      if (about && about1) {
-        aboutMe.style.display = "flex";
-        about1 = false;
-        setTimeout(() => {
-          aboutMe.style.opacity = 1;
-        }, 301);
-      }
-      if (!works && !works1) {
-        myWorks.style.opacity = 0;
-        works1 = true;
-        setTimeout(() => {
-          myWorks.style.display = "none";
-        }, 290);
-      }
-      if (works && works1) {
-        myWorks.style.display = "flex";
-        works1 = false;
-        setTimeout(() => {
-          myWorks.style.opacity = 1;
-        }, 300);
-      }
-      if (!social && !social1) {
-        socialDiv.style.opacity = 0;
-        social1 = true;
-        setTimeout(() => {
-          socialDiv.style.display = "none";
-        }, 290);
-      }
-      if (social && social1) {
-        socialDiv.style.display = "flex";
-        social1 = false;
-        setTimeout(() => {
-          socialDiv.style.opacity = 1;
-        }, 300);
-      }
-    }, 1);
-    if (screen.width < 768) {
-      clearInterval(c);
-    }
-  }, 1);
+import { clipboard } from '@skeletonlabs/skeleton';
+import mafuyu from './assets/mafuyu.png';
 </script>
+<svelte:head>
+  <script src="https://kit.fontawesome.com/05a652db68.js" crossorigin="anonymous"></script>
+</svelte:head>
 
-<main>
-  <div bind:this={bar} id="bar">
-    <div bind:this={bar_inside} id="bar_inside" />
-  </div>
-  <mainContainer>
-    <h1 id="name">
-      <span class="fancy-font-ramisland">Jin</span><span
-        class="fancy-font-qeilab">Pots</span
-      >
-    </h1>
-    <br />
-    <ul id="selectThingy">
-      <li>
-        <div class="hover fancy-font-rose" id="aboutH">1. About me</div>
-      </li>
-      <li>
-        <div class="hover fancy-font-rose" id="worksH">2. My works</div>
-      </li>
-      <li>
-        <div class="hover fancy-font-rose" id="socialH">3. Social medias</div>
-      </li>
-    </ul>
-    <div id="selectedStuffThingy">
-      <div id="aboutMe">
-        <p>
-          I'm Jin, but that's how my friend and others call me, you can call me
-          whatever suits me.
-          <br />
-          I'm a small (fullstack soon) web developer in Vietnam, you might can't
-          believe this but I'm still 15 and <br />
-          yes I wrote a discord bot and others, I don't know why I can do this but
-          maybe developing is my job I guess.
-          <br />
-          IF you wan't me to work for your project or hire, hit me up on whatever.
-        </p>
-      </div>
-      <div id="myWorks">
-        <div id="workContainer">
-          <div>
-            <a href="https://github.com/JinPots/fb60fps-neutralino"
-              >Facebook 60FPS (DEAD)</a
-            > <br />
-            <span
-              >An old tool made by me to bypass fps compress on facebook.</span
-            >
-          </div>
-          <div>
-            <a href="https://tsukushi.site">osu!droid skins website</a> <br />
-            <span
-              >A simple website for everyone to upload/download their skins or
-              youtubers.</span
-            >
-          </div>
-          <div>
-            <a href="/">KanPots (DEAD)</a> <br />
-            <span
-              >An old bot of mine and BlacBrue that uses o!rdr API to render
-              from osu!std replays to mp4 file.</span
-            >
-          </div>
-        </div>
-      </div>
-      <div id="social">
-        <span
-          >You can check me out at: <div id="medias">
-            <a href="https://fb.me/jinpots.official">Facebook</a>
-            <a href="https://twitter.com/shot27_osu">Twitter (X)</a>
-            <a href="mailto:huuthien27012@gmail.com">Email</a>
-            <a href="https://www.instagram.com/jinpots_osu/">Instagram</a>
-          </div></span
-        >
-      </div>
+<main class="pt-16 p-2 h-full bg-surface-500 dark:bg-surface-800 text-center grid grid-cols-3">
+  <div>
+    <p class="text-sm">
+    I'm a small developer currently live in <span class='text-red-600'>Vietnam</span>
+    <br>
+    You can check me out at:
+    </p>
+    <div class="w-full">
+      <button use:clipboard={'JinPots'} class="m-2"> <i class="fa-brands fa-discord"></i> </button>
+      <a class="m-2" target="_blank" href="https://fb.me/jinpots.official"><i class="fa-brands fa-facebook"></i></a>
+      <a class="m-2" target="_blank" href="https://instagram.com/jinpots_osu/"><i class="fa-brands fa-instagram"></i></a>
+      <a class="m-2" target="_blank" href="https://twitter.com/shot27_osu"><i class="fa-brands fa-x-twitter"></i></a>
+      <a class="m-2" target="_blank" href="mailto:huuthien27012@gmail.com"><i class="fa-regular fa-envelope"></i></a>
     </div>
-  </mainContainer>
+    <br>
+    <p>
+    But what I also do?
+    </p>    
+    <div>
+      I also do some <span class="gradient-heading">photography</span> and join:
+      <br>
+      <a class="bg-gradient-to-br from-red-800 via-black/70 to-primary-400 bg-clip-text text-transparent box-decoration-clone text-sm hover:from-primary-800 hover:via-black/60 hover:to-secondary-400 transition-colors" target="_blank" href="https://www.facebook.com/lqdkhmediaclub">
+        LMC - Le Quy Don Media Club (Nha Trang)
+      </a> <br>
+      <a href="https://www.facebook.com/clbnhiepanh.nvt" target="_blank" class="bg-gradient-to-br from-secondary-400 via-black/70 to-primary-500 bg-clip-text text-transparent box-decoration-clone text-sm hover:from-primary-800 hover:via-black/60 hover:to-secondary-400 transition-colors">Nguyen Van Troi Photography Club</a>
+    </div>
+<br>
+    <div class="m-2 text-sm">
+      My camera: <br>
+      Sony NEX-5N + 18-55mm kit <br>
+      But here is some of <a href="https://drive.google.com/drive/folders/1nzTXYoujEnGbD4YHyJaq9hSx1kJSHom0?usp=drive_link" class="text-secondary-700">my sample</a> so feel free to contact me and do some photo shoots lul
+
+    </div>
+    
+  </div>
+  <h1 class="h1 gradient-heading m-2">JinPots</h1>
+
+  <div>
+    <header class="h3">
+    Some of my Projects I work on:
+    </header> <br>
+    <div class="m-1 gap-3 grid">
+      <a href="https://github.com/JinPots/fb60fps-neutralino">
+      <div class="card card-hover">
+        <div class="card-header">
+          Facebook 60FPS Re-encoder
+        </div>
+        <p class="text-xs m-2">
+          A simple tool to re-encode video to get 60fps on Facebook
+        </p>
+        <span class="card-footer text-xs p-0 text-primary-800">https://github.com/JinPots/fb60fps-neutralinos</span>
+      </div>
+      </a>
+
+      <a href="https://tsukushi.site/">
+      <div class="card card-hover">
+        <div class="card-header">
+          Tsukushi.site
+        </div>
+        <p class="text-xs m-2">
+          A website to download osu!droid skins 
+        </p>
+        <span class="card-footer text-xs p-0 text-primary-800">https://tsukushi.site/</span>
+      </div>
+      </a>
+
+      <div class="card card-hover">
+        <div class="card-header">
+          KanPots
+        </div>
+        <p class="text-xs m-2">
+          A discord bot to render osu! replays with o!rdr and more..
+        </p>
+        <span class="card-footer text-xs p-0 text-primary-800">(dead)</span>
+      </div>
+
+  </div>
+  </div>
 </main>

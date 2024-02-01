@@ -1,33 +1,30 @@
-const colors = require('tailwindcss/colors')
+// @ts-check
+import { join } from "path";
 
+// 1. Import the Skeleton plugin
+import { skeleton } from "@skeletonlabs/tw-plugin";
+import { myCustomTheme } from "./mytheme";
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  mode: 'jit',
+export default {
+  // 2. Opt for dark mode to be handled via the class method
+  darkMode: "class",
   content: [
-    "./index.html",
-    './src/**/*.{html,js,svelte,ts}',
+    "./src/**/*.{html,js,svelte,ts}",
+    // 3. Append the path to the Skeleton package
+    join(
+      require.resolve("@skeletonlabs/skeleton"),
+      "../**/*.{html,js,svelte,ts}"
+    ),
   ],
   theme: {
-    extend: {
-      
-    },
-    colors: {
-      emerald: colors.emerald,
-      teal: colors.teal,
-      gray: colors.neutral,
-      ceil: {
-        50: "#F4F5FC",
-        100: "#EAEBF9",
-        200: "#DFE0F5",
-        300: "#D5D6F2",
-        400: "#CACCEF",
-        500: "#BFC2EC",
-        600: "#B5B8E9",
-        700: "#AAADE5",
-        800: "#A0A3E2",
-        900: "#9599DF"
-      }
-    }
+    extend: {},
   },
-  plugins: [],
-}
+  plugins: [
+    // 4. Append the Skeleton plugin (after other plugins)
+    skeleton({
+      themes: {
+        custom: [myCustomTheme],
+      },
+    }),
+  ],
+};
