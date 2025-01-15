@@ -10,8 +10,12 @@
   @apply from-primary-500 via-tertiary-500 to-secondary-500;
 }
 
+.hover-effect {
+  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
 :root [data-theme="jinpot"] {
-  --theme-font-family-base: "Qeilab", sans-serif;
-  --theme-font-family-heading: "Signature";
+  --theme-font-family-base: "Louis George Cafe", sans-serif;
+  --theme-font-family-heading: "Champagne & Limousines";
   /* ... */
 }

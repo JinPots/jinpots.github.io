@@ -1,19 +1,9 @@
 @font-face {
-  font-family: "Signature";
-  src: url("/otf/Mattrinah.otf");
-  font-weight: normal;
+  font-family: "Louis George Cafe";
+  src: url('/otf/Louis\ George\ Cafe.ttf');
 }
 
 @font-face {
-  font-family: "Ramisland";
-  src: url("/otf/Ramisland.otf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Qeilab";
-  src: url("/otf/Qeilab.otf");
-  font-weight: normal;
-  font-style: normal;
+  font-family: "Champagne & Limousines";
+  src: url('/otf/Champagne\ &\ Limousines.ttf');
 }
