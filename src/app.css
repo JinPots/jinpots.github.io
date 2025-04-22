@@ -1,6 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton/optional/presets';
+@import '@skeletonlabs/skeleton/themes/cerberus';
+
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
+@import "../jinpot.css";
+@import "./fira_code.css";
+
 
 .gradient-heading {
   @apply bg-clip-text text-transparent box-decoration-clone;
@@ -15,7 +23,7 @@
 }
 
 :root [data-theme="jinpot"] {
-  --theme-font-family-base: "Louis George Cafe", sans-serif;
-  --theme-font-family-heading: "Champagne & Limousines";
+  --base-font-family: "Louis George Cafe", sans-serif;
+  --heading-font-family: "Champagne & Limousines";
   /* ... */
 }
