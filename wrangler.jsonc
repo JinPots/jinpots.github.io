@@ -1,0 +1,12 @@
+{
+  "name": "<your-service-name>",
+  "account_id": "<your-account-id>",
+  "main": "./.cloudflare/worker.js",
+  "site": {
+    "bucket": "./.cloudflare/public"
+  },
+  "build": {
+    "command": "pnpm run build"
+  },
+  "compatibility_date": "2025-11-07"
+}

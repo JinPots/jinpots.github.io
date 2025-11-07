@@ -26,6 +26,7 @@
 	},
 	"dependencies": {
 		"@skeletonlabs/tw-plugin": "^0.4.1",
-		"dotenv": "^16.5.0"
+		"dotenv": "^16.5.0",
+		"wrangler": "^4.46.0"
 	}
 }
