@@ -1,6 +1,5 @@
 {
-  "name": "<your-service-name>",
-  "account_id": "<your-account-id>",
+  "name": "jinpots-io-vn",
   "main": "./.cloudflare/worker.js",
   "site": {
     "bucket": "./.cloudflare/public"
